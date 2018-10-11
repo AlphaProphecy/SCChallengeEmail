@@ -7,24 +7,6 @@ import java.lang.NullPointerException;
 
 public class SCChallengeEmailClass {
 	public static void main(String[] args)throws MalformedURLException, IOException {
-		System.out.println("1: Name from username");
-		int choice = Integer.parseInt(textInput("Enter your choice:"));
-		switch (choice){
-			case 1:	fullName();
-					break;
-		}
-	}
-	
-	
-	public static String textInput(String request) throws IOException{
-		System.out.println(request);
-		InputStreamReader in = new InputStreamReader(System.in);
-		BufferedReader ir = new BufferedReader(in);
-		String temp = ir.readLine();
-		return temp;
-	}
-	
-	public static void fullName() throws MalformedURLException, IOException {
 		try {
 			String link = "https://www.ecs.soton.ac.uk/people/" + textInput("Enter the username: ");
 			URL url = new URL(link);
@@ -50,7 +32,11 @@ public class SCChallengeEmailClass {
 		}
 	}
 	
-	public static void related() throws MalformedURLException, IOException {
-		
+	public static String textInput(String request) throws IOException{
+		System.out.println(request);
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader ir = new BufferedReader(in);
+		String temp = ir.readLine();
+		return temp;
 	}
 }
